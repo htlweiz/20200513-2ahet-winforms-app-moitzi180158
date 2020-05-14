@@ -16,10 +16,10 @@ namespace BasicMathOperations1
         {
             InitializeComponent();
         }
-
+        double num1, num2, result;
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int number1, number2, result;
+            
 
             /* Version 1 (Runtime Error)
             number1 = Convert.ToInt32(txtNumber1.Text);
@@ -39,9 +39,9 @@ namespace BasicMathOperations1
 
             try
             {
-                number1 = Convert.ToInt32(txtNumber1.Text);
-                number2 = Convert.ToInt32(txtNumber2.Text);
-                result = number1 + number2;
+                num1 = Convert.ToDouble(txtNumber1.Text);
+                num2 = Convert.ToDouble(txtNumber2.Text);
+                result = num1 + num2;
                 lblResult.Text = Convert.ToString(result);
                 lblResultType.Text = "Summe";
             }
@@ -51,6 +51,64 @@ namespace BasicMathOperations1
                 lblResult.Text = "Kein numerischer Wert!";
 
                 MessageBox.Show(ex.Message, "Eingabefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
+
+        private void BtnSub_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = Convert.ToDouble(txtNumber1.Text);
+                num2 = Convert.ToDouble(txtNumber2.Text);
+                result = num1 - num2;
+                lblResult.Text = Convert.ToString(result);
+                lblResultType.Text = "Ergebnis";
+            }
+            catch (Exception ex)
+            {
+                lblResultType.Text = "Fehler";
+                lblResult.Text = "keine Gültige Zahl";
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
+
+        private void BtnDiv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = Convert.ToDouble(txtNumber1.Text);
+                num2 = Convert.ToDouble(txtNumber2.Text);
+                if (num2 == 0)
+                {
+                    lblResultType.Text = "Fehler";
+                    lblResult.Text = "Nicht Definiert";
+
+                    MessageBox.Show("Zahl 2 darf nicht 0 sein.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNumber1.Focus();
+                    txtNumber1.SelectAll();
+                }
+                else
+                {
+                    result = num1 / num2;
+                    lblResult.Text = Convert.ToString(result);
+                    lblResultType.Text = "Ergebnis";
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                lblResultType.Text = "Fehler";
+                lblResult.Text = "Keine gültige Zahl";
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 txtNumber1.Focus();
                 txtNumber1.SelectAll();
@@ -68,5 +126,28 @@ namespace BasicMathOperations1
             txtNumber1.Focus();
             txtNumber1.SelectAll();
         }
+
+        private void BtnMultiplication_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                num1 = Convert.ToDouble(txtNumber1.Text);
+                num2 = Convert.ToDouble(txtNumber2.Text);
+                result = num1 * num2;
+                lblResult.Text = Convert.ToString(result);
+                lblResultType.Text = "Ergebnis";
+            }
+            catch (Exception ex)
+            {
+                lblResultType.Text = "Fehler";
+                lblResult.Text = "keine Gültige Zahl";
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
+
     }
 }
