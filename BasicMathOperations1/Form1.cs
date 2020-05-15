@@ -115,6 +115,68 @@ namespace BasicMathOperations1
             }
         }
 
+        private void BtnPotentiate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((num1==0)&&(num2==0))
+                {
+                    lblResultType.Text = "Fehler";
+                    lblResult.Text = "Nicht Definiert";
+
+                    MessageBox.Show("Zahl 1 darf nicht 0 sein, wenn Zahl 2 auch 0 ist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNumber1.Focus();
+                    txtNumber1.SelectAll();
+                }
+                num1 = Convert.ToDouble(txtNumber1.Text);
+                num2 = Convert.ToDouble(txtNumber2.Text);
+                result = Math.Pow(num1, num2);
+                lblResult.Text = Convert.ToString(result);
+                lblResultType.Text = "Ergebnis";
+            }
+            catch (Exception ex)
+            {
+                lblResultType.Text = "Fehler";
+                lblResult.Text = "keine Gültige Zahl";
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
+
+        private void BtnWurzel_Click(object sender, EventArgs e)
+        {
+            num1 = Convert.ToDouble(txtNumber1.Text);
+            num2 = Convert.ToDouble(txtNumber2.Text);
+            try
+            {
+                if (num1==0)
+                {
+                    lblResult.Text = "Error";
+                    lblResultType.Text = "a darf nicht 0 sein";
+                    MessageBox.Show(string.Empty, "Zahl 1 darf nicht 0 sein", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNumber1.Focus();
+                    txtNumber2.Focus();
+                }
+                
+                result = Math.Pow(num2, 1 / num1);
+                lblResult.Text = Convert.ToString(result);
+                lblResultType.Text = "Ergebnis";
+            }
+            catch (Exception ex)
+            {
+                lblResultType.Text = "Fehler";
+                lblResult.Text = "keine Gültige Zahl";
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             // Clear textboxes  and set  focus

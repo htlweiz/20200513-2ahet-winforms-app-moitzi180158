@@ -40,6 +40,8 @@
             this.btnMultiplication = new System.Windows.Forms.Button();
             this.btnSub = new System.Windows.Forms.Button();
             this.btnDiv = new System.Windows.Forms.Button();
+            this.btnPotentiate = new System.Windows.Forms.Button();
+            this.btnWurzel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -177,12 +179,38 @@
             this.btnDiv.UseVisualStyleBackColor = true;
             this.btnDiv.Click += new System.EventHandler(this.BtnDiv_Click);
             // 
+            // btnPotentiate
+            // 
+            this.btnPotentiate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPotentiate.Location = new System.Drawing.Point(451, 92);
+            this.btnPotentiate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPotentiate.Name = "btnPotentiate";
+            this.btnPotentiate.Size = new System.Drawing.Size(71, 40);
+            this.btnPotentiate.TabIndex = 12;
+            this.btnPotentiate.Text = "a^b";
+            this.btnPotentiate.UseVisualStyleBackColor = true;
+            this.btnPotentiate.Click += new System.EventHandler(this.BtnPotentiate_Click);
+            // 
+            // btnWurzel
+            // 
+            this.btnWurzel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWurzel.Location = new System.Drawing.Point(451, 155);
+            this.btnWurzel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnWurzel.Name = "btnWurzel";
+            this.btnWurzel.Size = new System.Drawing.Size(71, 41);
+            this.btnWurzel.TabIndex = 13;
+            this.btnWurzel.Text = "a√b";
+            this.btnWurzel.UseVisualStyleBackColor = true;
+            this.btnWurzel.Click += new System.EventHandler(this.BtnWurzel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.btnWurzel);
+            this.Controls.Add(this.btnPotentiate);
             this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.btnSub);
             this.Controls.Add(this.btnMultiplication);
@@ -217,6 +245,8 @@
         private System.Windows.Forms.Button btnMultiplication;
         private System.Windows.Forms.Button btnSub;
         private System.Windows.Forms.Button btnDiv;
+        private System.Windows.Forms.Button btnPotentiate;
+        private System.Windows.Forms.Button btnWurzel;
     }
 }
 
